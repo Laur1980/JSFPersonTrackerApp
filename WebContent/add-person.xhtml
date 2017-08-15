@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+	<f:event type="preRenderView"
+		listener="#{personController.loadPersons()}" />
+</f:metadata>
+<h:head>
+	<title>FirstPage</title>
+	<h:outputStylesheet library="css" name="table_style.css" />
+</h:head>
+<h:body>
+
+	<h:form>
+		<table>
+			<tr>
+				<td>
+					<h:commandButton value="ADD" action="#{}"/>
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>
