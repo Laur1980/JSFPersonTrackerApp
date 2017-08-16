@@ -4,10 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-<f:metadata>
-	<f:event type="preRenderView"
-		listener="#{personController.loadPersons()}" />
-</f:metadata>
 <h:head>
 	<title>FirstPage</title>
 	<h:outputStylesheet library="css" name="style.css" />styleh:
@@ -22,26 +18,21 @@
 		<h:panelGrid columns="3"></h:panelGrid>
 		
 		<table>
-		<tr>
-			<td>
-				<h:inputHidden value="#{person.id}"/>
-			</td>
-		</tr>
 			<tr>
 				<td class="first_column"><h:outputLabel>First name:</h:outputLabel> </td>
 				<td><h:inputText value="#{person.firstName}" 
 							     required="true"
-							     id="first_name"
+							     id="firstName"
 							     requiredMessage="The first name is mandatory!" /></td>
-				<td><h:message for="first_name" styleClass="error"/></td>
+				<td><h:message for="firstName" styleClass="error"/></td>
 			</tr>
 			<tr>
 				<td class="first_column"><h:outputLabel>Last name:</h:outputLabel> </td>
 				<td><h:inputText value="#{person.lastName}"
-								 id="last_name" 
+								 id="lastName" 
 							     required="true"
 							     requiredMessage="The last name is mandatory!" /></td>
-				<td><h:message for="last_name" styleClass="error"/></td>
+				<td><h:message for="lastName" styleClass="error"/></td>
 			</tr>
 			<tr>
 				<td class="first_column"><h:outputLabel>Email:</h:outputLabel> </td>
@@ -53,11 +44,12 @@
 			</tr>
 			<tr>
 				<td>
-					<h:commandButton value="ADD" styleClass="Save" action="#{personController.addPerson(person)}"/>
+					<h:commandButton value="UPDATE" styleClass="Save" action="#{personController.updatePerson(person)}"/>
 				</td>
 			</tr>
 		</table>
 	</h:form>
+	<h:outputText value="#{person}"/>
 	<div style="clear">
 		<p><h:outputLink value="index.xhtml">BACK</h:outputLink></p>
 	</div>

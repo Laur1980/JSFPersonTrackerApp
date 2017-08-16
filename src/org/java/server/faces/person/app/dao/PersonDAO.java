@@ -90,7 +90,7 @@ public class PersonDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = ps.getConnection();
+			con = data.getConnection();
 			ps= con.prepareStatement("DELETE FROM person WHERE person_id=?");
 			ps.setInt(1, id);
 			return ps.executeUpdate()==1?true:false;

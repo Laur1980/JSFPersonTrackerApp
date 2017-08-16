@@ -22,6 +22,10 @@ public class PersistenceService {
 		return personDAO.getPersons();
 	}
 	
+	public Person getPerson(int id)throws Exception{
+		return personDAO.getPerson(id);
+	}
+	
 	public boolean addPerson(Person p)throws Exception{
 		return personDAO.addPerson(p);
 	}
